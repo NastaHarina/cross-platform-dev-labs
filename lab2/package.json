@@ -1,0 +1,15 @@
+{
+  "name": "cross-platform",
+  "version": "1.0.0",
+  "description": "cross-platform development lab2",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --collect-coverage"
+  },
+  "author": "Shireee",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
