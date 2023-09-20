@@ -9,7 +9,7 @@ class Cache {
     }
 
     getCache(key) {
-        if (!this.multimap.has(key) || this.multimap.get(key).accessesLeft === 0) {
+        if (!this.multimap.has(key)) {
             return null;
         }
 

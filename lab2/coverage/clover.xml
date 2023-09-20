@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1695242771786" clover="3.2.0">
+  <project timestamp="1695242771786" name="All files">
+    <metrics statements="15" coveredstatements="15" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4" elements="26" coveredelements="25" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
+    <file name="cache.js" path="C:\Users\kirog\OneDrive\Desktop\magic\cross-platform-dev\lab2\src\cache.js">
+      <metrics statements="15" coveredstatements="15" conditionals="7" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <line num="3" count="5" type="stmt"/>
+      <line num="4" count="5" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="12" count="5" type="cond" truecount="4" falsecount="0"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="21" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="25" count="3" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
