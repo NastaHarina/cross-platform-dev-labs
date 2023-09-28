@@ -24,7 +24,7 @@ describe('getDerivative function', () => {
     });
 
     test('should handle negative polynomial', () => {
-        expect(getDerivative('-x^2 - 2x', 'x')).toBe('-2x-2');
+        expect(getDerivative('10y + x - x^2 - 2x', 'x')).toBe('1-2x-2');
     });
     
 });
