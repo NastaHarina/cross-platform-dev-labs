@@ -49,12 +49,13 @@ function getDerivative(polynomial, variable) {
     for (let i = 0; i < monomials.length; i++) {
         const monomial = monomials[i].trim();
         if (monomial === '+' || monomial === '-') {
-            if (!monomials[i+1].includes(variable))  continue
+            // if the next monomial do not contain taget of derivative is not a target var, then skip sing and monomial
+            if (!monomials[i+1].includes(variable))  continue 
             derivative += monomial; // Add + or - if it's a sign 
         } else {
             const monomialDerivative = diff(monomial, variable); // Taking diff()
             if  (monomialDerivative == 0){
-                derivative[i-1] = ''
+                derivative[i-1] = '' // If derivative = 0, then deleting sing before
                 continue
             } else {
                 derivative += monomialDerivative;
@@ -62,10 +63,10 @@ function getDerivative(polynomial, variable) {
            
         }
     }
-    
     if (derivative[0] === '+') {
-        derivative = derivative.substring(1); // Удалить первый символ
+        derivative = derivative.substring(1); // deleting sing if first monomial is not a target var
     }
+    
     return derivative;
 }
 
