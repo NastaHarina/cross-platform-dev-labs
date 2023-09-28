@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Derivative Calculator</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    
-<script src="./src/index.js"></script>
+    <p class="warning">「壊さないでください」</p> 
+    <h1>Derivative Calculator</h1>
+    <div class="container">
+        <div class="input-container">
+            <label for="variableDropdown">Select Variable:</label>
+            <select id="variableDropdown">
+                <option value="x">x</option>
+                <option value="y">y</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="inputPolynomial">Enter a polynomial:</label>
+            <input type="text" id="inputPolynomial" placeholder="e.g., 3x^2 + 5x + 2y^2">
+        </div>
+    </div>
+    <button id="calculateButton">Calculate Derivative</button>
+    <div id="result"></div>
+
+    <script src="src/diff.js"></script>
+    <script src="src/index.js"></script> 
 </body>
 </html>
