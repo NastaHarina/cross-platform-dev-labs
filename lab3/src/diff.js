@@ -18,16 +18,10 @@ function diff(inputFunction, variable) {
     if (parts.length === 2) {
         coefficient = parseFloat(parts[0]);
         exponent = parseFloat(parts[1]);
-
-        if (isNaN(coefficient) || isNaN(exponent)) {
-            throw new Error('Incorrect coefficient or degree.');
-        }
-    } else if (parts.length === 1 && inputFunction.endsWith(variable)) {
+    } else  {
         // If the variable exists, but the degree is not specified, consider the degree to be 1
         coefficient = parseFloat(parts[0]);
         exponent = 1;
-    } else {
-        throw new Error(`The input string must be in the format "a${variable}^2" or "a${variable}".`);
     }
 
     // Taking derivative 
