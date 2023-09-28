@@ -47,48 +47,31 @@ function diff(inputFunction, variable) {
 
 // Function for taking derivative
 function getDerivative(polynomial, variable) {
-    let monomials = [];
-    let temp = "";
-
+    
     // Spliting polinomial to monomials
-    for (let i = 0; i < polynomial.length; i++) {
-        if (polynomial[i] === "+" || polynomial[i] === "-") {
-            if (temp !== "") {
-                monomials.push(temp);
-                temp = "";
-            }
-            monomials.push(polynomial[i]); // Add "+" or "-"
-        } else {
-            temp += polynomial[i];
-        }
-    }
+    const monomials = polynomial.split(/([+\-])/); 
+    let derivative = '';
 
-    // Костыль -----
-    if (temp !== "") {
-        monomials.push(temp);
-    }
-
-    monomials.forEach((element, index) => {
-        monomials[index] = element.trim();
-    });
-    // Костыль -----
-
-
-    // Taking diff() of each monomial and  и concatenate polinomial
-    let derivative = "";
     for (let i = 0; i < monomials.length; i++) {
-        if (monomials[i] === "+" || monomials[i] === "-") {
-            derivative += monomials[i]; // If "+" or "-" add it to the polinomial 
+        const monomial = monomials[i].trim();
+        if (monomial === '+' || monomial === '-') {
+            if (!monomials[i+1].includes(variable))  continue
+            derivative += monomial; // Add + or - if it's a sign 
         } else {
-            const monomialDerivative = diff(monomials[i], variable); // Taking diff()
-            derivative += monomialDerivative;
+            const monomialDerivative = diff(monomial, variable); // Taking diff()
+            if  (monomialDerivative == 0){
+                derivative[i-1] = ''
+                continue
+            } else {
+                derivative += monomialDerivative;
+            }
+           
         }
     }
-
-    // Formating 
-    derivative = derivative.replace(/0[+\-]/g, '')
-    derivative = derivative.replace(/[+\-]0/g, '')
-
+    
+    if (derivative[0] === '+') {
+        derivative = derivative.substring(1); // Удалить первый символ
+    }
     return derivative;
 }
 
