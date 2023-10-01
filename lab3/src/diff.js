@@ -1,3 +1,13 @@
+function checkValidString(inputString) {
+    var regex = /[^+*a-z0-9-\s^]/i;
+  
+    if (regex.test(inputString)) {
+      return "error";
+    } else {
+      return inputString;
+    }
+  }
+
 // Function for taking first derivative of monomial
 function diff(inputFunction, variable) {
 
@@ -42,6 +52,8 @@ function diff(inputFunction, variable) {
 // Function for taking derivative
 function getDerivative(polynomial, variable) {
     
+    if (checkValidString(polynomial) == "error") return "error"
+
     // Spliting polinomial to monomials
     const monomials = polynomial.split(/([+\-])/); 
     let derivative = '';
@@ -65,6 +77,9 @@ function getDerivative(polynomial, variable) {
     }
     if (derivative[0] === '+') {
         derivative = derivative.substring(1); // deleting sing if first monomial is not a target var
+    }
+    if (derivative == ''){
+        derivative = '0'
     }
     
     return derivative;
