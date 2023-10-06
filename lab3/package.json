@@ -11,5 +11,8 @@
     "diff"
   ],
   "author": "Shireee",
-  "license": "ISC"
+  "license": "ISC",
+  "dependecies":{
+    "jest":"^29.7.0"
+  }
 }
