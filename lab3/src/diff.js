@@ -1,3 +1,4 @@
+// Function for string validation
 function checkValidString(inputString) {
     var regex = /[^+*a-z0-9-\s^]/i;
   
